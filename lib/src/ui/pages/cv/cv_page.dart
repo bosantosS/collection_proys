@@ -9,37 +9,9 @@ class CVPage extends StatelessWidget {
         builder: (BuildContext context, constraints) {
           if (constraints.maxWidth < 600) {
             return _buildPhoneLayout(constraints);
-          }else if (constraints.maxWidth >600 && constraints.maxWidth < 1000){
-            return PageView(
-              scrollDirection: Axis.horizontal,
-              physics: ClampingScrollPhysics(),
-              children: [
-                Row(
-                  children: [
-                    _PresonalInformation(
-                    width: constraints.maxWidth / 2,
-                    height: constraints.maxHeight,                      
-                    ),
-                    _WorkExperience(
-                                          width: constraints.maxWidth/2, 
-                    height: constraints.maxHeight,
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    _Education(
-                                          width: constraints.maxWidth/2,
-                    height: constraints.maxHeight,
-                    ),
-                    _Skills(
-                                          width: constraints.maxWidth/2,
-                    height: constraints.maxHeight,
-                    ),
-                  ],
-                )
-              ],
-            );
+          } else if (constraints.maxWidth > 600 &&
+              constraints.maxWidth < 1000) {
+            return _buildLayoutTablet(constraints);
           } else {
             return _buildLayoutDesktop(constraints);
           }
@@ -48,90 +20,128 @@ class CVPage extends StatelessWidget {
     );
   }
 
-  Row _buildLayoutDesktop(BoxConstraints constraints) {
-    return Row(
-            children: [
-              Flexible(
-                child: Container(
-                  padding: EdgeInsets.all(4.0),
-                  width: constraints.maxWidth,
-                  height: constraints.maxHeight,
-                  color: kPrimaryColor,
-                  child: _PresonalInformation(
-                    width: constraints.maxWidth,
-                    height: constraints.maxHeight,
-                  ),
-                ),
-              ),
-              Flexible(
-                child: Container(
-                  padding: EdgeInsets.all(4.0),
-                  width: constraints.maxWidth,
-                  height: constraints.maxHeight,
-                  color: kSecondaryColor,
-                  child: _WorkExperience(
-                    width: constraints.maxWidth,
-                    height: constraints.maxHeight,
-                  ),
-                ),
-              ),
-              Flexible(
-                child: Container(
-                  padding: EdgeInsets.all(4.0),
-                  width: constraints.maxWidth,
-                  height: constraints.maxHeight,
-                  color: kPrimaryColor,
-                  child: _Education(
-                    width: constraints.maxWidth,
-                    height: constraints.maxHeight,
-                  ),
-                ),
-              ),
-              Flexible(
-                child: Container(
-                  padding: EdgeInsets.all(4.0),
-                  width: constraints.maxWidth,
-                  height: constraints.maxHeight,
-                  color: kSecondaryColor,
-                  child: _Skills(
-                    width: constraints.maxWidth,
-                    height: constraints.maxHeight,
-                  ),
-                ),
-              ),
-            ],
-          );
-  }
 
   PageView _buildPhoneLayout(BoxConstraints constraints) {
     return PageView(
-            scrollDirection: Axis.horizontal,
-            physics: BouncingScrollPhysics(),
-            children: [
-              _PresonalInformation(
-                width: constraints.maxWidth,
-                height: constraints.maxHeight,
-              ),
-              _WorkExperience(
-                width: constraints.maxWidth,
-                height: constraints.maxHeight,
-              ),
-              _Education(
-                width: constraints.maxWidth,
-                height: constraints.maxHeight,
-              ),
-              _Skills(
-                width: constraints.maxWidth,
-                height: constraints.maxHeight,
-              ),
-            ],
-          );
+      scrollDirection: Axis.horizontal,
+      physics: BouncingScrollPhysics(),
+      children: [
+        _PresonalInformation(
+          width: constraints.maxWidth,
+          height: constraints.maxHeight,
+        ),
+        _WorkExperience(
+          width: constraints.maxWidth,
+          height: constraints.maxHeight,
+        ),
+        _Education(
+          width: constraints.maxWidth,
+          height: constraints.maxHeight,
+        ),
+        _Skills(
+          width: constraints.maxWidth,
+          height: constraints.maxHeight,
+        ),
+      ],
+    );
   }
 }
 
+
+  PageView _buildLayoutTablet(BoxConstraints constraints) {
+    return PageView(
+
+      scrollDirection: Axis.horizontal,
+      physics: ClampingScrollPhysics(),
+      children: [
+        Row(
+          children: [
+            _PresonalInformation(
+              width: constraints.maxWidth / 2,
+              height: constraints.maxHeight,
+            ),
+            _WorkExperience(
+              width: constraints.maxWidth / 2,
+              height: constraints.maxHeight,
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            _Education(
+              width: constraints.maxWidth / 2,
+              height: constraints.maxHeight,
+            ),
+            _Skills(
+              width: constraints.maxWidth / 2,
+              height: constraints.maxHeight,
+            ),
+          ],
+        )
+      ],
+    );
+  }
+
+  Row _buildLayoutDesktop(BoxConstraints constraints) {
+    return Row(
+      children: [
+        Flexible(
+          child: Container(
+            padding: EdgeInsets.all(4.0),
+            width: constraints.maxWidth,
+            height: constraints.maxHeight,
+            color: kPrimaryColor,
+            child: _PresonalInformation(
+              width: constraints.maxWidth,
+              height: constraints.maxHeight,
+            ),
+          ),
+        ),
+        Flexible(
+          child: Container(
+            padding: EdgeInsets.all(4.0),
+            width: constraints.maxWidth,
+            height: constraints.maxHeight,
+            color: kSecondaryColor,
+            child: _WorkExperience(
+              width: constraints.maxWidth,
+              height: constraints.maxHeight,
+            ),
+          ),
+        ),
+        Flexible(
+          child: Container(
+            padding: EdgeInsets.all(4.0),
+            width: constraints.maxWidth,
+            height: constraints.maxHeight,
+            color: kPrimaryColor,
+            child: _Education(
+              width: constraints.maxWidth,
+              height: constraints.maxHeight,
+            ),
+          ),
+        ),
+        Flexible(
+          child: Container(
+            padding: EdgeInsets.all(4.0),
+            width: constraints.maxWidth,
+            height: constraints.maxHeight,
+            color: kSecondaryColor,
+            child: _Skills(
+              width: constraints.maxWidth,
+              height: constraints.maxHeight,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
 class _Skills extends StatelessWidget {
   const _Skills({
-    Key key, this.width, this.height,
+    Key key,
+    this.width,
+    this.height,
   }) : super(key: key);
 
   final double width;
@@ -155,7 +165,8 @@ class _Skills extends StatelessWidget {
             children: [
               ListTile(
                 dense: true,
-                horizontalTitleGap: 2.0,isThreeLine: true,
+                horizontalTitleGap: 2.0,
+                isThreeLine: true,
                 title: Text(
                   'Flutter',
                   style: kTextStyleContent,
@@ -194,7 +205,8 @@ class _Skills extends StatelessWidget {
               ),
               ListTile(
                 dense: true,
-                horizontalTitleGap: 2.0,isThreeLine: true,
+                horizontalTitleGap: 2.0,
+                isThreeLine: true,
                 title: Text(
                   'Ionic',
                   style: kTextStyleContent,
@@ -233,7 +245,8 @@ class _Skills extends StatelessWidget {
               ),
               ListTile(
                 dense: true,
-                horizontalTitleGap: 2.0,isThreeLine: true,
+                horizontalTitleGap: 2.0,
+                isThreeLine: true,
                 title: Text(
                   'Vuejs',
                   style: kTextStyleContent,
@@ -272,7 +285,8 @@ class _Skills extends StatelessWidget {
               ),
               ListTile(
                 dense: true,
-                horizontalTitleGap: 2.0,isThreeLine: true,
+                horizontalTitleGap: 2.0,
+                isThreeLine: true,
                 title: Text(
                   'Google Cloud Platform',
                   style: kTextStyleContent,
@@ -311,7 +325,7 @@ class _Skills extends StatelessWidget {
               ),
               ListTile(
                 dense: true,
-                horizontalTitleGap: 2.0,isThreeLine: false,
+                horizontalTitleGap: 2.0, isThreeLine: false,
                 title: Text(
                   'Amazon Web Services',
                   style: kTextStyleContent,
@@ -340,7 +354,6 @@ class _Skills extends StatelessWidget {
                       color: kCancelColor,
                       size: 24.0,
                     ),
-                    
                     Icon(
                       Icons.star_border,
                       color: kCancelColor,
