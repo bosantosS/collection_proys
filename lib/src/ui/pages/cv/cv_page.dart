@@ -8,85 +8,124 @@ class CVPage extends StatelessWidget {
       body: LayoutBuilder(
         builder: (BuildContext context, constraints) {
           if (constraints.maxWidth < 600) {
+            return _buildPhoneLayout(constraints);
+          }else if (constraints.maxWidth >600 && constraints.maxWidth < 1000){
             return PageView(
               scrollDirection: Axis.horizontal,
-              physics: BouncingScrollPhysics(),
+              physics: ClampingScrollPhysics(),
               children: [
-                _PresonalInformation(
-                  width: constraints.maxWidth,
-                  height: constraints.maxHeight,
+                Row(
+                  children: [
+                    _PresonalInformation(
+                    width: constraints.maxWidth / 2,
+                    height: constraints.maxHeight,                      
+                    ),
+                    _WorkExperience(
+                                          width: constraints.maxWidth/2, 
+                    height: constraints.maxHeight,
+                    ),
+                  ],
                 ),
-                _WorkExperience(
-                  width: constraints.maxWidth,
-                  height: constraints.maxHeight,
-                ),
-                _Education(
-                  width: constraints.maxWidth,
-                  height: constraints.maxHeight,
-                ),
-                _Skills(
-                  width: constraints.maxWidth,
-                  height: constraints.maxHeight,
-                ),
+                Row(
+                  children: [
+                    _Education(
+                                          width: constraints.maxWidth/2,
+                    height: constraints.maxHeight,
+                    ),
+                    _Skills(
+                                          width: constraints.maxWidth/2,
+                    height: constraints.maxHeight,
+                    ),
+                  ],
+                )
               ],
             );
           } else {
-            return Row(
-              children: [
-                Flexible(
-                  child: Container(
-                    padding: EdgeInsets.all(4.0),
-                    width: constraints.maxWidth,
-                    height: constraints.maxHeight,
-                    color: kPrimaryColor,
-                    child: _PresonalInformation(
-                      width: constraints.maxWidth,
-                      height: constraints.maxHeight,
-                    ),
-                  ),
-                ),
-                Flexible(
-                  child: Container(
-                    padding: EdgeInsets.all(4.0),
-                    width: constraints.maxWidth,
-                    height: constraints.maxHeight,
-                    color: kSecondaryColor,
-                    child: _WorkExperience(
-                      width: constraints.maxWidth,
-                      height: constraints.maxHeight,
-                    ),
-                  ),
-                ),
-                Flexible(
-                  child: Container(
-                    padding: EdgeInsets.all(4.0),
-                    width: constraints.maxWidth,
-                    height: constraints.maxHeight,
-                    color: kPrimaryColor,
-                    child: _Education(
-                      width: constraints.maxWidth,
-                      height: constraints.maxHeight,
-                    ),
-                  ),
-                ),
-                Flexible(
-                  child: Container(
-                    padding: EdgeInsets.all(4.0),
-                    width: constraints.maxWidth,
-                    height: constraints.maxHeight,
-                    color: kSecondaryColor,
-                    child: _Skills(
-                      width: constraints.maxWidth,
-                      height: constraints.maxHeight,
-                    ),
-                  ),
-                ),
-              ],
-            );
+            return _buildLayoutDesktop(constraints);
           }
         },
       ),
     );
+  }
+
+  Row _buildLayoutDesktop(BoxConstraints constraints) {
+    return Row(
+            children: [
+              Flexible(
+                child: Container(
+                  padding: EdgeInsets.all(4.0),
+                  width: constraints.maxWidth,
+                  height: constraints.maxHeight,
+                  color: kPrimaryColor,
+                  child: _PresonalInformation(
+                    width: constraints.maxWidth,
+                    height: constraints.maxHeight,
+                  ),
+                ),
+              ),
+              Flexible(
+                child: Container(
+                  padding: EdgeInsets.all(4.0),
+                  width: constraints.maxWidth,
+                  height: constraints.maxHeight,
+                  color: kSecondaryColor,
+                  child: _WorkExperience(
+                    width: constraints.maxWidth,
+                    height: constraints.maxHeight,
+                  ),
+                ),
+              ),
+              Flexible(
+                child: Container(
+                  padding: EdgeInsets.all(4.0),
+                  width: constraints.maxWidth,
+                  height: constraints.maxHeight,
+                  color: kPrimaryColor,
+                  child: _Education(
+                    width: constraints.maxWidth,
+                    height: constraints.maxHeight,
+                  ),
+                ),
+              ),
+              Flexible(
+                child: Container(
+                  padding: EdgeInsets.all(4.0),
+                  width: constraints.maxWidth,
+                  height: constraints.maxHeight,
+                  color: kSecondaryColor,
+                  child: _Skills(
+                    width: constraints.maxWidth,
+                    height: constraints.maxHeight,
+                  ),
+                ),
+              ),
+            ],
+          );
+  }
+
+  PageView _buildPhoneLayout(BoxConstraints constraints) {
+    return PageView(
+            scrollDirection: Axis.horizontal,
+            physics: BouncingScrollPhysics(),
+            children: [
+              _PresonalInformation(
+                width: constraints.maxWidth,
+                height: constraints.maxHeight,
+              ),
+              _WorkExperience(
+                width: constraints.maxWidth,
+                height: constraints.maxHeight,
+              ),
+              _Education(
+                width: constraints.maxWidth,
+                height: constraints.maxHeight,
+              ),
+              _Skills(
+                width: constraints.maxWidth,
+                height: constraints.maxHeight,
+              ),
+            ],
+          );
   }
 }
 
