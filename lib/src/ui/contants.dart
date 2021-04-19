@@ -14,20 +14,20 @@ d3e0ea
 const TextStyle kTextStyleTitle = TextStyle(
   fontSize: 32.0,
   fontWeight: FontWeight.bold,
-  color: kCancelColor,
+  color: kActionColor,
 );
 
 const TextStyle kTextStyleSubtitle = TextStyle(
   fontSize: 24.0,
   fontWeight: FontWeight.bold,
-  color: kCancelColor,
+  color: kActionColor,
 );
 
 const TextStyle kTextStyleContent = TextStyle(
   fontSize: 16.0,
   fontStyle: FontStyle.italic,
   fontWeight: FontWeight.bold,
-  color: kCancelColor,
+  color: kActionColor,
 );
 
 const TextStyle kTextStyleTitle1 = TextStyle(
