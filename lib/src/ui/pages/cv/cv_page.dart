@@ -1,9 +1,5 @@
 import 'package:collection_proys/src/ui/contants.dart';
-import 'package:collection_proys/src/ui/pages/cv/DividerSection.dart';
 import 'package:collection_proys/src/ui/pages/cv/Education.dart';
-import 'package:collection_proys/src/ui/pages/cv/ItemList.dart';
-import 'package:collection_proys/src/ui/pages/cv/ItemList.dart';
-import 'package:collection_proys/src/ui/pages/cv/ItemOrg.dart';
 import 'package:collection_proys/src/ui/pages/cv/PersonalInformation.dart';
 import 'package:collection_proys/src/ui/pages/cv/Skills.dart';
 import 'package:collection_proys/src/ui/pages/cv/WorkExperience.dart';
@@ -18,7 +14,7 @@ class CVPage extends StatelessWidget {
           if (constraints.maxWidth < 600) {
             return _buildPhoneLayout(constraints);
           } else if (constraints.maxWidth > 600 &&
-              constraints.maxWidth < 1000) {
+              constraints.maxWidth <= 1024) {
             return _buildLayoutTablet(constraints);
           } else {
             return _buildLayoutDesktop(constraints);
@@ -41,6 +37,7 @@ class CVPage extends StatelessWidget {
         WorkExperience(
           width: constraints.maxWidth,
           height: constraints.maxHeight,
+          isPrimary: false,
         ),
         Education(
           width: constraints.maxWidth,
@@ -49,6 +46,7 @@ class CVPage extends StatelessWidget {
         Skills(
           width: constraints.maxWidth,
           height: constraints.maxHeight,
+          isPrimary: false,
         ),
       ],
     );
@@ -71,6 +69,7 @@ class CVPage extends StatelessWidget {
             WorkExperience(
               width: constraints.maxWidth / 2,
               height: constraints.maxHeight,
+              isPrimary: false,
             ),
           ],
         ),
@@ -83,6 +82,7 @@ class CVPage extends StatelessWidget {
             Skills(
               width: constraints.maxWidth / 2,
               height: constraints.maxHeight,
+              isPrimary: false,
             ),
           ],
         )
@@ -114,6 +114,7 @@ class CVPage extends StatelessWidget {
             child: WorkExperience(
               width: constraints.maxWidth,
               height: constraints.maxHeight,
+              isPrimary: false,
             ),
           ),
         ),
@@ -138,6 +139,7 @@ class CVPage extends StatelessWidget {
             child: Skills(
               width: constraints.maxWidth,
               height: constraints.maxHeight,
+              isPrimary: false,
             ),
           ),
         ),

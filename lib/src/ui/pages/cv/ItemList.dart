@@ -15,7 +15,7 @@ class ItemList extends StatelessWidget {
 
   final IconData iconData;
   final String title;
-  final String description;
+  final List<String> description;
   final double qualification;
   final bool isPrimary;
 
@@ -68,6 +68,20 @@ class ItemList extends StatelessWidget {
     );
   }
 
+  Widget _buildSubtitle(){
+
+    List<Widget> children = [];
+
+    for (var item in this.description) {
+      children.add(Text(item));      
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: children,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -86,12 +100,7 @@ class ItemList extends StatelessWidget {
           : kTextStyleContent1,
       ),
       subtitle: this.description != null 
-        ? Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(this.description),
-          ],
-        ) 
+        ? _buildSubtitle()
         : null,
       trailing: this.qualification != null
         ? _buildStars()

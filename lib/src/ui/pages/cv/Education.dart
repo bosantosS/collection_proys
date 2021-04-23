@@ -30,7 +30,7 @@ class Education extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'Educacion',
+              'Educación',
               style: this.isPrimary 
                 ? kTextStyleTitle
                 : kTextStyleTitle1,
@@ -39,71 +39,47 @@ class Education extends StatelessWidget {
               width: this.width, 
               height: this.height
             ),
-            ListView(
-              shrinkWrap: true,
-              children: [
-                ItemOrg(
-                  asset: 'assets/logo/ESPOL.png',
-                  puesto: 'Ing. en Ciencias Computacionales',
-                  org: 'ESPOL',
-                  periodo: 'Actualmente',
-                ),
-                ItemOrg(
-                  asset: 'assets/logo/AIIP.png',
-                  puesto: 'Bach. Tecnico en Aplicaciones Informaticas',
-                  org: 'U. E. Ati II Pillahuaso',
-                  periodo: '2016',
-                ),
-              ],
+            ItemOrg(
+              asset: 'assets/logo/ESPOL.png',
+              puesto: 'Ing. en Ciencias Computacionales',
+              org: 'ESPOL',
+              periodo: 'Actualmente',
+            ),
+            ItemOrg(
+              asset: 'assets/logo/AIIP.png',
+              puesto: 'Bach. Técnico en Aplicaciones Informáticas',
+              org: 'U. E. Ati II Pillahuaso',
+              periodo: '2016',
             ),
             Text(
               'Cursos',
               style: kTextStyleTitle,
             ),
             DividerSection(width: this.width, height: this.height),
-            ListView(
-              shrinkWrap: true,
-              children: [
-                ListTile(
-                  leading: Icon(
-                    Icons.car_rental,
-                    color: kCancelColor,
-                  ),
-                  title: Text(
-                    'Licencia de manejo, tipo B',
-                    style: kTextStyleContent,
-                  ),
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.menu_book,
-                    color: kCancelColor,
-                  ),
-                  title: Text(
-                    'Microsoft Office 365',
-                    style: kTextStyleContent,
-                  ),
-                ),
-              ],
+            ItemList(
+              iconData: Icons.menu_book,
+              title: 'Microsoft Office 365', 
+              qualification: null,
+            ),
+            ItemList(
+              iconData: Icons.car_rental,
+              title: 'Licencia de manejo',
+              description: ['Tipo B'], 
+              qualification: null,
             ),
             Text(
               'Idiomas',
               style: kTextStyleTitle,
             ),
-            DividerSection(width: this.width, height: this.height),
-            ListView(
-              shrinkWrap: true,
-              children: [
-                ItemList(
-                  title: 'Español', 
-                  qualification: 5.0,
-                ),
-                ItemList(
-                  title: 'Ingles', 
-                  description: 'Intermedio, B1',
-                  qualification: 3.0,
-                ),
-              ],
+            DividerSection(width: this.width, height: this.height,),
+            ItemList(
+              title: 'Español', 
+              qualification: 5.0,
+            ),
+            ItemList(
+              title: 'Ingles', 
+              description: ['Intermedio, B1'],
+              qualification: 3.0,
             ),
           ],
         ),

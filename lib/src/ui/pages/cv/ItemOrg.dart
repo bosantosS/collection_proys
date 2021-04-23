@@ -7,7 +7,7 @@ class ItemOrg extends StatelessWidget {
     @required this.asset,
     @required this.puesto,
     this.periodo,
-    @required this.org, 
+    @required this.org,
     this.isPrimary = true,
   }) : super(key: key);
 
@@ -29,16 +29,15 @@ class ItemOrg extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.only(left: 50.0),
               color: this.isPrimary
-                ? kPrimaryColor.withOpacity(0.4)
-                : kSecondaryColor.withOpacity(0.4),
+                  ? kActionColor.withOpacity(0.04)
+                  : kCancelColor.withOpacity(0.04),
               width: double.maxFinite,
               child: ListTile(
                 contentPadding: EdgeInsets.symmetric(vertical: 2.0),
                 title: Text(
                   this.puesto,
-                  style: this.isPrimary
-                    ? kTextStyleSubtitle
-                    : kTextStyleSubtitle1,
+                  style:
+                      this.isPrimary ? kTextStyleSubtitle : kTextStyleSubtitle1,
                 ),
                 subtitle: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -47,9 +46,9 @@ class ItemOrg extends StatelessWidget {
                     Text(
                       this.org,
                       textAlign: TextAlign.start,
-                      style: this.isPrimary 
-                        ? kTextStyleContent
-                        : kTextStyleContent1,
+                      style: this.isPrimary
+                          ? kTextStyleContent
+                          : kTextStyleContent1,
                     ),
                     if (this.periodo != null)
                       Text(
@@ -62,10 +61,10 @@ class ItemOrg extends StatelessWidget {
           ),
           ClipOval(
               child: Image.asset(
-            this.asset,
-            width: 100,
-            alignment: Alignment.centerLeft,
-          )),
+                this.asset,
+                width: 100,
+                alignment: Alignment.centerLeft,
+              )),
         ],
       ),
     );

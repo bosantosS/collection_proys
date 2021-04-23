@@ -33,18 +33,18 @@ const TextStyle kTextStyleContent = TextStyle(
 const TextStyle kTextStyleTitle1 = TextStyle(
   fontSize: 32.0,
   fontWeight: FontWeight.bold,
-  color: kActionColor,
+  color: kCancelColor,
 );
 
 const TextStyle kTextStyleSubtitle1 = TextStyle(
   fontSize: 24.0,
   fontWeight: FontWeight.bold,
-  color: kActionColor,
+  color: kCancelColor,
 );
 
 const TextStyle kTextStyleContent1 = TextStyle(
   fontSize: 16.0,
   fontStyle: FontStyle.italic,
   fontWeight: FontWeight.bold,
-  color: kActionColor,
+  color: kCancelColor,
 );
