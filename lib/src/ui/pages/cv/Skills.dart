@@ -61,6 +61,12 @@ class Skills extends StatelessWidget {
                   isPrimary: this.isPrimary,
                 ),
                 ItemList(
+                  title: 'Figma', 
+                  description: ['Para prototipado y diseño.'],
+                  qualification: 3.5,
+                  isPrimary: this.isPrimary,
+                ),
+                ItemList(
                   title: 'Google Cloud Platform', 
                   description: ['Firebase, Maps y ML kit.'],
                   qualification: 3.5,

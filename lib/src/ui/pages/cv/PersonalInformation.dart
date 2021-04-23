@@ -55,8 +55,7 @@ class PresonalInformation extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                ''' Adasdsadsad ad asd asd sad a sd sa d as das d asd a sd as d as d as d as d as d as d as da sd as d as d as d asdasdasd.
-                ''',
+                'Estudiante de 23 años con experiencia dando clases, soporte técnico y desarrollo de aplicaciones multiplataforma. Busco aportar al desarrollo de la empresa con los conocimientos que tengo en varias tecnologías y aprender nuevas para crecer como profesional.',
                 softWrap: true,
                 textAlign: TextAlign.justify,
                 //overflow: TextOverflow.ellipsis,
