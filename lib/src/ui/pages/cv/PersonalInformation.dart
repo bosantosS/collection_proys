@@ -3,6 +3,7 @@ import 'package:collection_proys/src/ui/pages/cv/DividerSection.dart';
 import 'package:collection_proys/src/ui/pages/cv/ItemList.dart';
 import 'package:collection_proys/src/ui/pages/cv/SocialNetworks.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PresonalInformation extends StatelessWidget {
   const PresonalInformation({
@@ -67,18 +68,18 @@ class PresonalInformation extends StatelessWidget {
             ),
             DividerSection(width: width, height: height),
             ItemList(
-              iconData: Icons.location_on_rounded,
+              iconData: FontAwesomeIcons.mapMarkedAlt,
               title: 'Ecuador - Guayaquil',
               description: ['Guasmo Sur Union de Bananeros'], 
               qualification: null,
             ),
             ItemList(
-              iconData: Icons.mail,
+              iconData: FontAwesomeIcons.mailBulk,
               title: 'bryan97santos@gmail.com',
               qualification: null,
             ),
             ItemList(
-              iconData: Icons.phone_android,
+              iconData: FontAwesomeIcons.mobileAlt,
               title: '+593 989884022',
               qualification: null,
             ),

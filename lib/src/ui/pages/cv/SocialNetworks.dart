@@ -19,22 +19,22 @@ class SocialNetworks extends StatelessWidget {
       children: [
         FaIcon(
           FontAwesomeIcons.facebook,
-          size: 64.0,
+          size: 48.0,
           color: this.isPrimary ? kActionColor : kCancelColor,
         ),
         FaIcon(
           FontAwesomeIcons.twitter,
-          size: 64.0,
+          size: 48.0,
           color: this.isPrimary ? kActionColor : kCancelColor,
         ),
         FaIcon(
           FontAwesomeIcons.instagram,
-          size: 64.0,
+          size: 48.0,
           color: this.isPrimary ? kActionColor : kCancelColor,
         ),
         FaIcon(
           FontAwesomeIcons.youtube,
-          size: 64.0,
+          size: 48.0,
           color: this.isPrimary ? kActionColor : kCancelColor,
         ),
       ],

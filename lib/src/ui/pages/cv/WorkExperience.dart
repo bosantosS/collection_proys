@@ -1,9 +1,10 @@
 import 'package:collection_proys/src/ui/contants.dart';
+import 'package:collection_proys/src/ui/pages/cv/DividerSection.dart';
 import 'package:collection_proys/src/ui/pages/cv/ItemList.dart';
 import 'package:collection_proys/src/ui/pages/cv/ItemOrg.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'DividerSection.dart';
 
 class WorkExperience extends StatelessWidget {
   const WorkExperience({
@@ -78,21 +79,21 @@ class WorkExperience extends StatelessWidget {
               isPrimary: this.isPrimary,
             ),
             ItemList(
-              iconData: Icons.assignment_ind,
+              iconData: FontAwesomeIcons.addressCard,
               title: 'Ing. El pepe oficial',
               description: ['elpepeoficial@gmail.com','+593987654321',], 
               qualification: null,
               isPrimary: this.isPrimary,
             ),
             ItemList(
-              iconData: Icons.assignment_ind,
+              iconData: FontAwesomeIcons.addressCard,
               title: 'Ing. El pepe oficial',
               description: ['elpepeoficial@gmail.com','+593987654321',], 
               qualification: null,
               isPrimary: this.isPrimary,
             ),
             ItemList(
-              iconData: Icons.assignment_ind,
+              iconData: FontAwesomeIcons.addressCard,
               title: 'Ing. El pepe oficial',
               description: ['elpepeoficial@gmail.com','+593987654321',], 
               qualification: null,
