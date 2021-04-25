@@ -7,10 +7,10 @@ import 'package:flutter/material.dart';
 
 final routes = <_Route>[
   _Route(Icons.description, 'Explication', '/', ExplicationPage()),
-  _Route(Icons.home, 'Home', 'home', HomePage()),
-  _Route(Icons.local_hospital_outlined, 'Proyecto 1', 'proyecto1', Proyecto1Page()),
-  _Route(Icons.airplanemode_active,'Proyecto 2', 'proyecto2', Proyecto2Page()),
-  _Route(Icons.description_rounded, 'Curriculum Vitae', 'cv', CVPage())
+  _Route(Icons.home, 'Home', '/home', HomePage()),
+  _Route(Icons.local_hospital_outlined, 'Proyecto 1', '/proyecto1', Proyecto1Page()),
+  _Route(Icons.airplanemode_active,'Proyecto 2', '/proyecto2', Proyecto2Page()),
+  _Route(Icons.description_rounded, 'Curriculum Vitae', '/cv', CVPage())
   
 ];
 

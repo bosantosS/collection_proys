@@ -12,32 +12,43 @@ class SocialNetworks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      //mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        FaIcon(
-          FontAwesomeIcons.facebook,
-          size: 48.0,
-          color: this.isPrimary ? kActionColor : kCancelColor,
-        ),
-        FaIcon(
-          FontAwesomeIcons.twitter,
-          size: 48.0,
-          color: this.isPrimary ? kActionColor : kCancelColor,
-        ),
-        FaIcon(
-          FontAwesomeIcons.instagram,
-          size: 48.0,
-          color: this.isPrimary ? kActionColor : kCancelColor,
-        ),
-        FaIcon(
-          FontAwesomeIcons.youtube,
-          size: 48.0,
-          color: this.isPrimary ? kActionColor : kCancelColor,
-        ),
-      ],
+    return Center(
+      child: Row(
+        //mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          _Link(isPrimary: isPrimary,iconData: FontAwesomeIcons.facebook,),
+          _Link(isPrimary: isPrimary,iconData: FontAwesomeIcons.linkedin,),
+          _Link(isPrimary: isPrimary,iconData: FontAwesomeIcons.instagram,),
+          _Link(isPrimary: isPrimary,iconData: FontAwesomeIcons.youtube,),
+        ],
+      ),
+    );
+  }
+}
+
+class _Link extends StatelessWidget {
+  const _Link({
+    Key key,
+    @required this.isPrimary, 
+    this.iconData,
+  }) : super(key: key);
+
+  final bool isPrimary;
+  final IconData iconData;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      iconSize: 48.0,
+      icon: FaIcon(
+        this.iconData,
+        color: this.isPrimary ? kActionColor : kCancelColor,
+      ),
+      onPressed: () {
+        print(this.iconData.toString());
+      },
     );
   }
 }
