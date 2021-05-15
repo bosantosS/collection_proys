@@ -9,7 +9,8 @@ class ItemList extends StatelessWidget {
     @required this.qualification, 
     this.description, 
     this.iconData, 
-    this.isPrimary = true,
+    this.isPrimary = true, 
+    this.onPressed,
 
   }) : super(key: key);
 
@@ -18,6 +19,7 @@ class ItemList extends StatelessWidget {
   final List<String> description;
   final double qualification;
   final bool isPrimary;
+  final Function onPressed;
 
   Widget _buildStars(){
 
@@ -85,6 +87,7 @@ class ItemList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: this.onPressed,
       dense: true,
       horizontalTitleGap: 2.0,
       //isThreeLine: true,

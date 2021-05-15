@@ -43,7 +43,7 @@ class Education extends StatelessWidget {
               asset: 'assets/logo/ESPOL.png',
               puesto: 'Ing. en Ciencias Computacionales',
               org: 'ESPOL',
-              periodo: 'Actualmente',
+              periodo: 'Actualmente en curso',
             ),
             ItemOrg(
               asset: 'assets/logo/AIIP.png',

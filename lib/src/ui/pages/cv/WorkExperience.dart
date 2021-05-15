@@ -80,22 +80,22 @@ class WorkExperience extends StatelessWidget {
             ),
             ItemList(
               iconData: FontAwesomeIcons.addressCard,
-              title: 'Ing. El pepe oficial',
-              description: ['elpepeoficial@gmail.com','+593987654321',], 
+              title: 'M. Sc. en Desarrollo de Software\nRodrigo Saraguro',//, Ing. Sistemas Informáticos y Computación
+              description: ['rasaraguro@gmail.com','+593 989740591',], 
               qualification: null,
               isPrimary: this.isPrimary,
             ),
             ItemList(
               iconData: FontAwesomeIcons.addressCard,
-              title: 'Ing. El pepe oficial',
-              description: ['elpepeoficial@gmail.com','+593987654321',], 
+              title: 'Abg. Angélica Castillo',
+              description: ['angelikastillos@hotmail.com','+593 988578802',], 
               qualification: null,
               isPrimary: this.isPrimary,
             ),
             ItemList(
               iconData: FontAwesomeIcons.addressCard,
-              title: 'Ing. El pepe oficial',
-              description: ['elpepeoficial@gmail.com','+593987654321',], 
+              title: 'Ing. en Computación e Informática\nAraceli Olvera',
+              description: ['aracelyolvera_2011@hotmail.com','+593 993920423',], 
               qualification: null,
               isPrimary: this.isPrimary,
             ),

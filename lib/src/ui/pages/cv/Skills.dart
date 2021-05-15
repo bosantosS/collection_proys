@@ -80,7 +80,7 @@ class Skills extends StatelessWidget {
                 ),
                 ItemList(
                   title: 'Python', 
-                  description: ['Para scrapping, backend y GUI.'],
+                  description: ['Para data science, backend y GUI.'],
                   qualification: 4.0,
                   isPrimary: this.isPrimary,
                 ),
