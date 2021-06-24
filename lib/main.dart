@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Collection Projects',
       //home: CVPage(),
-      initialRoute: '/home',
+      initialRoute: '/cv',
       routes: {
         '/': (BuildContext context) => ExplicationPage(),
         '/home': (BuildContext context) => HomePage(),
